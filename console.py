@@ -3,6 +3,8 @@
     the entry point of the command interpreter
     """
 import cmd
+import models
+import shlex
 from models.base_model import BaseModel
 from models import storage
 from models.user import User
@@ -166,7 +168,6 @@ class HBNBCommand(cmd.Cmd):
                 pass
         setattr(storage.all()[aux_key], args[2], temp_value)
         storage.all()[aux_key].save()
-
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
