@@ -1,16 +1,16 @@
 #!/usr/bin/python3
-"""[summary]
-    """
+"""class BaseModel"""
 # task 3, 4
 import uuid
 from datetime import datetime
 
+
 class BaseModel:
-    """[summary]
+    """New instance BaseModel class
     """
 
     def __init__(self, *args, **kwargs):
-        """[summary]
+        """Method constructor initialize an instance
         """
         self.id = str(uuid4())
         self.created_at = datetime.now()
@@ -36,13 +36,24 @@ class BaseModel:
             models.storage.new(self)
 
     def __str__(self):
-        """[summary]
+        """representation of an object
         """
+        printable_str = "[{}] ({}) {}".format(
+            type(self).__name__, self.id, str(self.__dict__)
+        )
+        return printable_str
 
     def save(self):
-        """docstring
+        """Instance public update the datetime
         """
+        self.updated_at = datetime.datetime.now()
+        storage.save()
+
     def to_dict(self):
-        """[summary]
+        """Instance public create a dict
         """
-    
+        new_dict = self.__dict__.copy()
+        new_dict["__class__"] = type(self).__name__
+        new_dict["updated_at"] = new_dict["updated_at"].isoformat()
+        new_dict["created_at"] = new_dict["created_at"].isoformat()
+        return new_dict

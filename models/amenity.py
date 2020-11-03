@@ -1,14 +1,9 @@
 #!/usr/bin/python3
-"""[summary]
-    """
-# task 9    
+"""class Amenity
+"""
 from models.base_model import BaseModel
 
 
 class Amenity(BaseModel):
-    """[summary]
-
-    Args:
-        BaseModel ([type]): [description]
-    """
+    """class Amenityfrom BaseModel empty"""
     name = ""

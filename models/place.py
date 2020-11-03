@@ -1,16 +1,11 @@
 #!/usr/bin/python3
-    """[summary]
+"""class Place
     """
-# task 9
 from models.base_model import BaseModel
 
 
 class Place(BaseModel):
-    """[summary]
-
-    Args:
-        BaseModel ([type]): [description]
-    """
+    """class place from BaseModel empty"""
     city_id = ""
     user_id = ""
     name = ""
