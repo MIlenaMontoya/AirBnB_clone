@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 """class BaseModel"""
-# task 3, 4
 import uuid
-from datetime import datetime
-
+import datetime
+from models import storage
 
 class BaseModel:
     """New instance BaseModel class
