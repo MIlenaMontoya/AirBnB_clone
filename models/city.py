@@ -1,10 +1,11 @@
+
 #!/usr/bin/python3
-"""[summary]
+"""City Class
     """
 # task 9    
 from models.base_model import BaseModel
 
-# task 9
+
 class City(BaseModel):
     """[summary]
 
