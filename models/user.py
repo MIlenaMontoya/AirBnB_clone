@@ -1,16 +1,12 @@
 #!/usr/bin/python3
-"""[summary]
+"""class user
     """
-# task 8 
 from models.base_model import BaseModel
 
 
 class User(BaseModel):
-    """[summary]
-
-    Args:
-        BaseModel ([type]): [description]
-    """
+    """class user from
+        BaseModel empty"""
     email = ""
     password = ""
     first_name = ""

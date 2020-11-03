@@ -1,16 +1,15 @@
 #!/usr/bin/python3
+<<<<<<< HEAD
     """Place Class
+=======
+"""class Place
+>>>>>>> aca072dcd039a43b89d0543378a6695cd16ca11e
     """
-# task 9
 from models.base_model import BaseModel
 
 
 class Place(BaseModel):
-    """[summary]
-
-    Args:
-        BaseModel ([type]): [description]
-    """
+    """class place from BaseModel empty"""
     city_id = ""
     user_id = ""
     name = ""

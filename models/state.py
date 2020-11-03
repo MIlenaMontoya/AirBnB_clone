@@ -1,15 +1,10 @@
 #!/usr/bin/python3
-"""[summary]
+"""class state
     """
-# task 9
 from models.base_model import BaseModel
 
 
 class State(BaseModel):
-    """[summary]
-
-    Args:
-        BaseModel ([type]): [description]
-    """
+    """class state from
+        BaseModel empty"""
     name = ""
-    

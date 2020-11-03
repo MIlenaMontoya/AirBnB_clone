@@ -1,17 +1,25 @@
 #!/usr/bin/python3
+<<<<<<< HEAD
 """AirBnB project"""
 import uuid
 from datetime import datetime
 import models
 import copy
+=======
+"""class BaseModel"""
+
+import uuid
+from datetime import datetime
+import models
+>>>>>>> aca072dcd039a43b89d0543378a6695cd16ca11e
 
 
 class BaseModel:
-    """[summary]
+    """New instance BaseModel class
     """
 
     def __init__(self, *args, **kwargs):
-        """[summary]
+        """Method constructor initialize an instance
         """
         self.id = str(uuid4())
         self.created_at = datetime.now()
@@ -37,6 +45,7 @@ class BaseModel:
             models.storage.new(self)
 
     def __str__(self):
+<<<<<<< HEAD
         """Print a readable sstirng
         """
         return "[{}] ({}) {}".format(
@@ -60,3 +69,24 @@ class BaseModel:
         dictn['updated_at'] = self.update_at.strftime(form)
         dictn['id'] = self.id
         return dictn
+=======
+        """representation of an object
+        """
+        return "[{}] ({}) {}".format(self.__class__.__name__,
+         self.id, self.__dict__)
+        
+    def save(self):
+        """Instance public update the datetime
+        """
+        self.updated_at = datetime.now()
+        models.storage.save()
+
+    def to_dict(self):
+        """Instance public create a dict
+        """
+        new_dict = self.__dict__.copy()
+        new_dict["__class__"] = type(self).__name__
+        new_dict["updated_at"] = new_dict["updated_at"].isoformat()
+        new_dict["created_at"] = new_dict["created_at"].isoformat()
+        return new_dict
+>>>>>>> aca072dcd039a43b89d0543378a6695cd16ca11e

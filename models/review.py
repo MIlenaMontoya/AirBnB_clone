@@ -1,17 +1,11 @@
 #!/usr/bin/python3
-"""[summary]
+"""class review
     """
-# task 9
 from models.base_model import BaseModel
 
 
 class Review(BaseModel):
-    """[summary]
-
-    Args:
-        BaseModel ([type]): [description]
-    """
+    """class Review from BaseModel empty"""
     place_id = ""
     user_id = ""
     text = ""
-    
