@@ -62,23 +62,3 @@ class BaseModel:
         dictn['updated_at'] = self.update_at.strftime(form)
         dictn['id'] = self.id
         return dictn
-
-        """representation of an object
-        """
-        return "[{}] ({}) {}".format
-        (self.__class__.__name__, self.id, self.__dict__)
-
-    def save(self):
-        """Instance public update the datetime
-        """
-        self.updated_at = datetime.now()
-        models.storage.save()
-
-    def to_dict(self):
-        """Instance public create a dict
-        """
-        new_dict = self.__dict__.copy()
-        new_dict["__class__"] = type(self).__name__
-        new_dict["updated_at"] = new_dict["updated_at"].isoformat()
-        new_dict["created_at"] = new_dict["created_at"].isoformat()
-        return new_dict
