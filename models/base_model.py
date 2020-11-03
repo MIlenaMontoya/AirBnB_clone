@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-"""[summary]
-    """
-# task 3, 4
+"""AirBnB project"""
 import uuid
 from datetime import datetime
+import models
+import copy
+
 
 class BaseModel:
     """[summary]
@@ -36,13 +37,26 @@ class BaseModel:
             models.storage.new(self)
 
     def __str__(self):
-        """[summary]
+        """Print a readable sstirng
         """
+        return "[{}] ({}) {}".format(
+            self.__class__.__name__, self.id, self.__dict__)
 
     def save(self):
-        """docstring
+        """Updates with the current datetime
         """
+        self.update_at = datetime.now()
+        models.storage.save()
+
     def to_dict(self):
-        """[summary]
+        """Returns a dictionary with all keys/value
+        of __dict__ of the instance
         """
-    
+        dictn = copy.deepcopy(self.__dict__)
+        dicn['__class__'] = self.__clas__.__name__
+
+        form = "%Y-%m-%dT%H:%M:%S.%f"
+        dictn['created_at'] = self.created_at.strftime(form)
+        dictn['updated_at'] = self.update_at.strftime(form)
+        dictn['id'] = self.id
+        return dictn
