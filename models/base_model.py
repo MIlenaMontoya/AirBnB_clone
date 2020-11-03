@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 """class BaseModel"""
+
 import uuid
-import datetime
-from models import storage
+from datetime import datetime
+import models
+
 
 class BaseModel:
     """New instance BaseModel class
@@ -37,16 +39,14 @@ class BaseModel:
     def __str__(self):
         """representation of an object
         """
-        printable_str = "[{}] ({}) {}".format(
-            type(self).__name__, self.id, str(self.__dict__)
-        )
-        return printable_str
-
+        return "[{}] ({}) {}".format(self.__class__.__name__,
+         self.id, self.__dict__)
+        
     def save(self):
         """Instance public update the datetime
         """
-        self.updated_at = datetime.datetime.now()
-        storage.save()
+        self.updated_at = datetime.now()
+        models.storage.save()
 
     def to_dict(self):
         """Instance public create a dict
