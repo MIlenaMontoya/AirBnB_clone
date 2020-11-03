@@ -1,10 +1,6 @@
 #!/usr/bin/python3
-<<<<<<< HEAD
-    """Place Class
-=======
-"""class Place
->>>>>>> aca072dcd039a43b89d0543378a6695cd16ca11e
-    """
+"""Place Class
+"""
 from models.base_model import BaseModel
 
 
