@@ -5,13 +5,12 @@ header{
     border-bottom: 1px solid #CCCCCC;
    }
 
-    #logo{
-        height: 100%;
-        width: 140px;
-       background-image: url("../images/logo.png");
-       background-repeat: no-repeat;
-       background-position: center;
-       margin-left: 20px;
-
-   }
+#logo{
+    height: 100%;
+    width: 142px;
+    background-image: url("../images/logo.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 20px;
+}
    
